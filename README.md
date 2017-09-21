@@ -1,3 +1,30 @@
+## fangqing_xi@163 notes
+1,settings.gradle发现
+  include ':owncloud-android-library'
+
+build.gradle
+compile project(':owncloud-android-library')
+
+2,grep owncloud-android-library -nr .
+发现 .gitmodules中
+[submodule "owncloud-android-library"]
+    path = owncloud-android-library
+    url = https://github.com/owncloud/android-library.git
+    branch = master
+[submodule "ocdoc"]
+    path = user_manual/ocdoc
+    url = https://github.com/owncloud/documentation
+    branch = master
+
+复制url描述的master分支到存放该目录下
+git clone https://github.com/owncloud/android-library.git
+
+oc_jb_workaround 同理。
+
+3，导入Android Studio编译， find . -iname *.apk
+      ./build/outputs/apk/android-3_null-debug.apk
+
+
 # [ownCloud](https://owncloud.org) Android app
 [![](https://owncloud.org/wp-content/themes/owncloudorgnew/assets/img/clients/buttons/googleplay.png)](https://play.google.com/store/apps/details?id=com.owncloud.android)
 
